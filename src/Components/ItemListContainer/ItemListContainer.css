@@ -1,0 +1,11 @@
+.text{
+margin: 1rem;
+
+}
+
+Card{
+
+display: flex;
+justify-content: space-between; 
+
+}

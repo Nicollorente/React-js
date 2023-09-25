@@ -1,0 +1,15 @@
+.checkout{
+display: flex;
+justify-content: space-between;
+margin: 50px;
+}
+
+.button{
+  vertical-align: text-bottom; 
+  margin: 30px;
+}
+.numOrden{
+
+  margin: 5px;
+  padding: 5px;
+}
