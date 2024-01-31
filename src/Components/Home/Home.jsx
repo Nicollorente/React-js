@@ -7,6 +7,7 @@ import {
   StackDivider,
   Box,
   Text,
+  Center,
 } from "@chakra-ui/react";
 import { Stack, Button, Image } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
@@ -17,7 +18,7 @@ const Home = () => {
   return (
     <>
       <div className="card">
-        <Card maxW="sm">
+        <Card w={350} >
           <CardBody>
             <Image
               src="https://www.webretail.com.ar/v2/wp-content/uploads/2021/12/a32a6b2b-498c-dbb3-67d4-2dfc08ce6d77.jpg"
@@ -34,7 +35,7 @@ const Home = () => {
           </CardBody>
         </Card>
 
-        <Card maxW="400">
+        <Card  w={350}>
           <CardBody>
             <Image
               src="https://img.lagaceta.com.ar/fotos/notas/2016/06/16/686488_20160616134901.jpg"
@@ -51,15 +52,15 @@ const Home = () => {
           </CardBody>
         </Card>
 
-        <Card maxW="235">
+        <Card  w={262} >
           <CardBody>
             <Image
-              src="https://frozenpoint.com.ar/wp-content/uploads/2021/11/NotIcecream-Tableta-10.png"
-              alt="Comidas"
+              src="https://imgs.search.brave.com/c5VmWEI7KY0Ew2O5tUYoC2T-mUhi2C5WrXA5uqbv53A/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9OUV9OUF84/MjgyNDUtTUxBNDIw/NzkwOTg2NTRfMDYy/MDIwLU8ud2VicA"
+              alt="Green double couch with wooden legs"
               borderRadius="lg"
             />
             <Stack mt="6" spacing="3">
-              <Link to={'/category/postres'}>
+              <Link to='/category/postres'>
                 <Button variant="solid" colorScheme="blue">
                   Postres
                 </Button>
@@ -68,7 +69,7 @@ const Home = () => {
           </CardBody>
         </Card>
 
-        <Card maxW="sm">
+        <Card  w={350} >
           <CardBody>
             <Image
               src="https://i.ytimg.com/vi/g6cj21JvU9c/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGBEgWyhyMA8=&rs=AOn4CLDFVuwsRxNk_dEp1Em-qJCnf8cDMA"
@@ -77,7 +78,7 @@ const Home = () => {
             />
             <Stack mt="6" spacing="3">
               <Link to={'/category/leches'}>
-                <Button variant="solid" colorScheme="blue">
+                <Button variant="solid" colorScheme="blue" >
                   Leches
                 </Button>
               </Link>
@@ -91,4 +92,3 @@ const Home = () => {
 };
 
 export default Home;
-

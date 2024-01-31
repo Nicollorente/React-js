@@ -85,6 +85,8 @@ const Navbar = () => {
               aria-label="Options"
               icon={<HamburgerIcon />}
               variant="outline"
+              color='pink.600'
+              
             />
             <MenuList>
               <Link to={`/category/comidas`}>
