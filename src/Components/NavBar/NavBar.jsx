@@ -106,8 +106,8 @@ const Navbar = () => {
           </Menu>
         </Box>
 
-        <Box>
-          <Link to={"/"}>
+        <Box mt={5}>
+          <Link to={"/"} >
             <h1>Good Food Maker </h1>
           </Link>
         </Box>

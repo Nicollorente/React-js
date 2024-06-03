@@ -7,9 +7,9 @@ const Item = ({producto}) => {
 
 
 return (
-    <>
-    <div>
-<Card textAlign='center' maxW='sm'>
+    
+    <div >
+<Card textAlign='center' maxW='sm' h={600} mt={10} bg={"transparent"}>
   <CardBody>
     <Image src= {producto.image}/>
     <Stack mt='6' spacing='3'>
@@ -39,7 +39,7 @@ return (
   </CardFooter> */}
 </Card>
 </div>
-    </>
+
   )
 }
 

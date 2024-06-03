@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <>
       <div className="card">
-        <Card w={350} >
+        <Card w={350} h={280} >
           <CardBody>
             <Image
               src="https://www.webretail.com.ar/v2/wp-content/uploads/2021/12/a32a6b2b-498c-dbb3-67d4-2dfc08ce6d77.jpg"
@@ -91,4 +91,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home;

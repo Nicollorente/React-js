@@ -15,9 +15,7 @@ function App() {
   return (
 
  <CartContext>
-
 <BrowserRouter>
-
 <Navbar/>
 <Routes>
 <Route exact path='/' element={<Home/>}/>
