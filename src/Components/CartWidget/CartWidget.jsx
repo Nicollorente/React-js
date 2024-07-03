@@ -35,7 +35,7 @@ const CartWidget = () => {
     <div>
     <img  src={carrito} alt="imagen carrito" />
 
-      {cantidadEnCarrito()}
+      <div className='cantidad-carrito'>{cantidadEnCarrito()}</div>
   
     </div>
   )
