@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { FormControl,FormLabel,Input,FormHelperText } from '@chakra-ui/react'
+import { FormControl,FormLabel,Input,FormHelperText, FormErrorMessage } from '@chakra-ui/react'
 import "./Checkout.css"
 import { Button } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
@@ -13,7 +13,7 @@ const Checkout = () => {
 
   const [pedidoId,setPedidoId]=useState("")
   const {cart,cantidadTotalCarrito,vaciarCarrito}=useContext(CartContext)
-const {register,handleSubmit} = useForm();
+const {register,handleSubmit,formState:{errors}} = useForm();
 
 
   const  comprar = (data)=> {
@@ -52,20 +52,23 @@ return(
     
     <form className='checkout' onSubmit={handleSubmit((comprar))}  >
       
-    <FormControl>
+    <FormControl isInvalid={errors.Nombre}>
   <FormLabel>Nombre y Apellido</FormLabel>
-  <Input type='text' {...register("Nombre")} />
+  <Input type='text' {...register("Nombre",{required:"Nombre Y Apellido son requeridos"})} />
+  {errors.Nombre && <FormErrorMessage> {errors.Nombre.message}</FormErrorMessage>}
 </FormControl>
 
-<FormControl>
+<FormControl isInvalid={errors.Email}>
   <FormLabel >Email </FormLabel>
-  <Input type='e-mail' {...register("Email")} />
+  <Input type='e-mail' {...register("Email",{required:"Su email es requerido"})} />
+  {errors.Email && <FormErrorMessage>{errors.Email.message}</FormErrorMessage>}
   <FormHelperText>Ingrese su email para enviar una notificacion de su pedido</FormHelperText>
 </FormControl>
 
-<FormControl>
+<FormControl isInvalid={errors.Contacto}>
   <FormLabel>Contacto</FormLabel>
-  <Input type='number' {...register("Contacto")} />
+  <Input type='number' {...register("Contacto",{required:"Su contacto es requerido"})} />
+  {errors.Contacto && <FormErrorMessage>{errors.Contacto.message}</FormErrorMessage>}
   <FormHelperText></FormHelperText>
 </FormControl>
 
@@ -74,7 +77,6 @@ return(
   Enviar
 </Button>
 </div>
-
     </form>
     
   )
