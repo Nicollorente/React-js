@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 import "./Cart.css";
-import { Button } from "@chakra-ui/react";
+import { Button, Center } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-
+import { Card,Image,Stack,CardBody,Heading,Text,CardFooter } from "@chakra-ui/react";
 const Cart = () => {
   const { cart, cantidadTotalCarrito, vaciarCarrito } = useContext(CartContext);
   const vaciar = () => {
@@ -15,13 +15,42 @@ const Cart = () => {
       <h1>Carrito</h1>
       <br />
       {cart.map((prod) => (
-        <div key={prod.id}>
-          <br />
-          <h3>{prod.name}</h3>
-          <p>Precio Unitario ${prod.precio}</p>
-          <p>Precio Total $ {prod.precio * prod.cantidad}</p>
-          <p>Cantidad Total: {prod.cantidad}</p>
-        </div>
+        // <div key={prod.id}>
+        //   <br />
+        //   <img src={prod.image} alt="Imagen del producto" />
+        //   <h3>{prod.name}</h3>
+        //   <p>Precio Unitario ${prod.precio}</p>
+        //   <p>Precio Total $ {prod.precio * prod.cantidad}</p>
+        //   <p>Cantidad Total: {prod.cantidad}</p>
+        // </div>
+<Card
+  direction={{ base: 'column', sm: 'row' }}
+  overflow='hidden'
+  variant='outline'
+>
+  <Image
+    objectFit='cover'
+    maxW={{ base: '100%', sm: '200px' }}
+    src={prod.image}
+    alt={prod.name}
+  />
+
+  <Stack>
+    <CardBody>
+      <Heading size='md'>{prod.name}</Heading>
+
+      <div className="info-productos">
+      <Text py='2'>Precio Unitario: ${prod.precio}</Text>
+      <Text py='2'>Cantidad Total: {prod.cantidad}</Text>
+      <Text py='2'>Precio Total: ${prod.precio * prod.cantidad}</Text>
+      </div>
+
+      
+    </CardBody>
+  </Stack>
+</Card>
+
+
       ))}
 
       {cart.length > 0 ? (

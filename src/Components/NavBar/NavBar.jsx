@@ -76,7 +76,7 @@ import "./NavBar.css";
 
 const Navbar = () => {
   return (
-    <>
+    <div className="nav">
       <Grid templateColumns="repeat(3, 1fr)" gap={6}>
         <Box m="2">
           <Menu>
@@ -120,7 +120,7 @@ const Navbar = () => {
       </Grid>
 
     
-    </>
+    </div>
   );
 };
 

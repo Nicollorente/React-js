@@ -2,3 +2,9 @@
 text-align: center;
 padding: 20px;
 }
+
+.info-productos{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}

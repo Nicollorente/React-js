@@ -18,3 +18,7 @@ cursor: pointer;
   justify-content: flex-end;
   margin: 1rem;
 }
+
+.nav{
+  background-color:  rgba(255, 255, 255, 0.795);;
+}
