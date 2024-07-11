@@ -10,24 +10,43 @@ export const CartContextProvider = ({ children }) => {
   const longitud = cart.length;
   console.log(longitud);
 
+  // const agregarAlCarrito = (item, cantidad) => {
+  //   const agregarItemProducto = { ...item, cantidad };
+
+  //   const nuevoCart = [...cart];
+
+  //   const productosEnCarrito = nuevoCart.find(
+  //     (producto) => producto.id === agregarItemProducto.id
+  //   );
+
+  //   if (productosEnCarrito) {
+  //     productosEnCarrito.cantidad += productosEnCarrito.cantidad + cantidad;
+  //     setCart(nuevoCart);
+  //   } else {
+  //     console.log("No se agrego ningun producto al Carrito");
+  //   }
+
+  //   setCart([...cart, agregarItemProducto]);
+  // };
+
   const agregarAlCarrito = (item, cantidad) => {
     const agregarItemProducto = { ...item, cantidad };
+    setCart((prevCart) => {
+      const nuevoCart = [...prevCart];
+      const productosEnCarrito = nuevoCart.find(
+        (producto) => producto.id === agregarItemProducto.id
+      );
 
-    const nuevoCart = [...cart];
+      if (productosEnCarrito) {
+        productosEnCarrito.cantidad += cantidad;
+      } else {
+        nuevoCart.push(agregarItemProducto);
+      }
 
-    const productosEnCarrito = nuevoCart.find(
-      (producto) => producto.id === agregarItemProducto.id
-    );
-
-    if (productosEnCarrito) {
-      productosEnCarrito.cantidad = productosEnCarrito.cantidad + cantidad;
-      setCart(nuevoCart);
-    } else {
-      console.log("No se agrego ningun producto al Carrito");
-    }
-
-    setCart([...cart, agregarItemProducto]);
+      return nuevoCart;
+    });
   };
+
 
   const cantidadEnCarrito = () => {
     return cart.reduce((acc, prod) => acc + prod.cantidad, 0);
@@ -36,6 +55,11 @@ export const CartContextProvider = ({ children }) => {
   const cantidadTotalCarrito = () => {
     return cart.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0);
   };
+  
+  const removerDelCarrito=(productId)=>{
+    setCart(cart.filter((prod)=>prod.id !== productId))
+  };
+
   const vaciarCarrito = () => {
     setCart([]);
   };
@@ -56,6 +80,7 @@ useEffect(()=>{
         vaciarCarrito,
         cantidadEnCarrito,
         cantidadTotalCarrito,
+        removerDelCarrito
       }}
     >
       {children}

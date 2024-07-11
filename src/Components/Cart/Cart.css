@@ -1,10 +1,37 @@
 .container{
 text-align: center;
 padding: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
 
 .info-productos{
     display: flex;
     flex-direction: column;
-    text-align: start;
+    text-align: center;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+}
+
+.button-icon{
+    position: absolute;
+    right: -123px;
+    width: 10px;
+    color: white;
+}
+
+.icon{
+    font-size:19px;
+    color:red;
+    width: 20px;
+    height: 20px;
+
 }
