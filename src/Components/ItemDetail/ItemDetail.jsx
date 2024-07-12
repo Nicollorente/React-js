@@ -50,9 +50,9 @@ const agregarNumero =()=>{
             </Text>
           </Stack>
         </CardBody>
-        {/* <Divider /> */}
+
         <CardFooter>
-          <ButtonGroup spacing="2">
+          <ButtonGroup spacing="6">
           <Button onClick={restarNumero} variant="solid" colorScheme="green">
               -
             </Button>
