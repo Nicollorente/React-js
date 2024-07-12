@@ -7,6 +7,12 @@ justify-content: center;
 align-items: center;
 }
 
+.item{
+    display: flex;
+    justify-content: center;
+    width: 300px;
+}
+
 .info-productos{
     display: flex;
     flex-direction: column;
@@ -23,7 +29,8 @@ align-items: center;
 
 .button-icon{
     position: absolute;
-    right: -123px;
+    right: -416px;
+    top: -185px;
     width: 10px;
     color: white;
 }

@@ -32,7 +32,7 @@ const Cart = () => {
   direction={{ base: 'column', sm: 'row' }}
   overflow='hidden'
   variant='outline'
-  w={600}
+  w={660}
 >
 
   <Image
@@ -43,7 +43,7 @@ const Cart = () => {
   />
   <Stack>
     <CardBody>
-      <Heading size='md'>{prod.name}</Heading>
+      <Heading className="item" size='sm'>{prod.name}</Heading>
 
       <div className="info-productos">
       <Text py='2'>Precio Unitario: ${prod.precio}</Text>
@@ -51,19 +51,21 @@ const Cart = () => {
       <Text py='2'>Precio Total: ${prod.precio * prod.cantidad}</Text>
       </div>
     </CardBody>
-  </Stack>
+
   <Button className="button-icon" bg={"white"}>
   <HStack className="icon"> 
   <Icon as={DeleteIcon} onClick={()=>HandleBorrar(prod.id)} />
   </HStack>
   </Button>
+
+  </Stack>
 </Card>
 
 
       ))}
 
       {cart.length > 0 ? (
-        <>
+        <div className="compra-total">
           <h2>Compra en Total: ${cantidadTotalCarrito()}</h2>
           <br />
           <div className="buttons">
@@ -77,7 +79,7 @@ const Cart = () => {
             </Button>{" "}
           </Link>
           </div>
-        </>
+        </div>
       ) : (
         <h2>El carrito esta vacio 🥺</h2>
       )}

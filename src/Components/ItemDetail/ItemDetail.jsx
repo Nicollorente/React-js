@@ -61,7 +61,7 @@ const agregarNumero =()=>{
             <Button onClick={agregarNumero} variant="solid" colorScheme="green">
               +
             </Button>
-            
+
             <Button onClick={()=>{agregarAlCarrito(item,cantidad)}} variant="solid" colorScheme="pink">
               Agregar al carrito 
             </Button>
