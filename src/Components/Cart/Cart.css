@@ -113,8 +113,18 @@ width: 100%;
     }
 
     .container .card .info-productos .button-icon{
+
         position: relative;
-        right: -170px;
+        left: 193px;
+    }
+
+
+}
+
+@media (max-width: 480px){
+    .container .card .info-productos .button-icon{
+        position: relative;
+        left: 293px;
         top: -493px;
         width: 20px;
     }
@@ -132,4 +142,5 @@ width: 100%;
         height: 10px;
     
     }
+
 }
