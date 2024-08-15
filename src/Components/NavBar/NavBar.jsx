@@ -80,7 +80,7 @@ const Navbar = () => {
       <Grid templateColumns="repeat(3, 1fr)" gap={6}>
         <Box m="2">
           <Menu>
-            <MenuButton
+            <MenuButton className="menu-button"
               as={IconButton}
               aria-label="Options"
               icon={<HamburgerIcon />}
@@ -88,7 +88,7 @@ const Navbar = () => {
               color='pink.600'
               
             />
-            <MenuList>
+            <MenuList className="menu-list">
               <Link to={`/category/comidas`}>
                 <MenuItem command="🍔">Comidas</MenuItem>
               </Link>
@@ -108,7 +108,7 @@ const Navbar = () => {
 
         <Box mt={5} className="text">
           <Link to={"/"} >
-            <h1>Good Food Maker </h1>
+            <h1 >Good Food Maker </h1>
           </Link>
         </Box>
 

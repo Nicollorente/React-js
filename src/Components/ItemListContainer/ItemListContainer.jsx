@@ -3,37 +3,25 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 import ItemList from "../ItemList/ItemList";
-import { collection,getDocs,query,where} from "firebase/firestore"; 
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../fireStore/Config";
 
-
 const ItemListContainer = () => {
-
   const [arrayList, setArrayList] = useState([]);
   const category = useParams().category;
   useEffect(() => {
+    const prodcutsRef = collection(db, "productos");
+    const q = category
+      ? query(prodcutsRef, where("category", "==", category))
+      : prodcutsRef;
 
- const prodcutsRef= collection(db,"productos")
- const q = category ? query(prodcutsRef, where("category","==",category)): prodcutsRef
-
-
- getDocs(q)
-
- .then((resp)=>{
-
-setArrayList(
-resp.docs.map ((doc)=>{
-return {...doc.data(),id: doc.id }
-
-
-})
-
-)
-
-
- })
-
-
+    getDocs(q).then((resp) => {
+      setArrayList(
+        resp.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
+        })
+      );
+    });
   }, [category]);
 
   return (
