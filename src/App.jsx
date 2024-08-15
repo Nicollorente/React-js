@@ -8,9 +8,6 @@ import CartContext from './Context/CartContext'
 import Cart from './Components/Cart/Cart';
 import Checkout from './Components/Checkout/Checkout';
 
-
-
-
 function App() {
   return (
 

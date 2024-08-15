@@ -1,13 +1,74 @@
 .card{
     display: flex;
-    justify-content:space-around;
+    justify-content:center;
     align-items:center;
     flex-wrap: wrap;
     text-align: center;
     background-color: transparent;
     margin-bottom: 100px;
+    background-color: rgba(255, 255, 255, 0.795);
+    height: 300px;
 }
 
-.card{
-    background-color: rgba(255, 255, 255, 0.795);
+.card .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px 0 10px;
+    padding: 20px 0 0 0;
+    width: 300px;
+}
+.content{
+    height: 100%;
+}
+
+.card .content .card-body{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .content .card-body img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+
+}
+
+/*MEDIA QUERYS*/
+
+@media screen and (max-width:1020px) {
+    .card{
+        margin: 30px 0 380px 0;
+    }
+
+    .card .content{
+        margin-bottom: 20px;
+    }
+
+}
+
+
+@media screen and (max-width: 600px) {
+    .card{
+        width: 100%;
+        margin-top: 60px;
+    }
+
+    .card .content-ice-cream{
+        width: 350px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card .content-ice-cream .card-body img{
+        width: 200px;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

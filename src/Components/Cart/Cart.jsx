@@ -29,6 +29,7 @@ const Cart = () => {
         //   <p>Cantidad Total: {prod.cantidad}</p>
         // </div>
 <Card
+className="card"
   direction={{ base: 'column', sm: 'row' }}
   overflow='hidden'
   variant='outline'
@@ -46,17 +47,18 @@ const Cart = () => {
       <Heading className="item" size='sm'>{prod.name}</Heading>
 
       <div className="info-productos">
+        <div className="desc">
       <Text py='2'>Precio Unitario: ${prod.precio}</Text>
       <Text py='2'>Cantidad Total: {prod.cantidad}</Text>
       <Text py='2'>Precio Total: ${prod.precio * prod.cantidad}</Text>
       </div>
-    </CardBody>
-
-  <Button className="button-icon" bg={"white"}>
+      <Button className="button-icon" bg={"white"}>
   <HStack className="icon"> 
   <Icon as={DeleteIcon} onClick={()=>HandleBorrar(prod.id)} />
   </HStack>
   </Button>
+      </div>
+    </CardBody>
 
   </Stack>
 </Card>
