@@ -13,3 +13,24 @@ margin: 50px;
   margin: 5px;
   padding: 5px;
 }
+
+
+@media screen and (max-width:1020px) {
+  form{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:600px) {
+  form{
+    width: 100%;
+  }
+  
+}
+
+@media screen and (max-width:480px) {
+  form{
+    width: 100%;
+  }
+  
+}
