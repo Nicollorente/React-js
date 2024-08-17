@@ -37,8 +37,7 @@ className="card"
 >
 
   <Image
-    objectFit='cover'
-    maxW={{ base: '100%', sm: '200px' }}
+  className="img"
     src={prod.image}
     alt={prod.name}
   />
